@@ -54,7 +54,7 @@ After installing the dependencies, you're ready to run the application:
    Run the following command in the terminal:
 
    ```bash
-   uvicorn app.git_predictor:app --reload
+   uvicorn app.gift_predictor:app --reload
    ```
 
    The `--reload` flag enables auto-reload so the server will restart after changes in the code.
