@@ -1,9 +1,10 @@
-FastAPI based service for the Birthday Gift Predictor
-===================================================
+![FastAPI for Data Science](docs/images/fastapi-banner-1.png)
+
+# Тьюториал: ****Основы FastAPI для Data Science****
 
 The Birthday Gift Predictor is a FastAPI-based web application designed to suggest unique and personalized gift ideas based on the user's age and interests. Utilizing a JSON-based model, the app offers a fun and interactive way to discover the perfect birthday present.
 
-## Install
+## 👩‍💻 Installation
 
 To get started with the Birthday Gift Predictor, you need to have Python installed on your system. Follow these steps to install the necessary dependencies:
 
