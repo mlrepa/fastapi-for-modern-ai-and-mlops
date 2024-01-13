@@ -434,6 +434,7 @@ curl -X 'POST' \
 ## 🔗 Дополнительные ресурсы
 
 - [Документация FastAPI](https://fastapi.tiangolo.com/ru/#_5)
+- [4 Tips for Building a Production-Ready FastAPI Backend](https://www.youtube.com/watch?v=XlnmN4BfCxw)
 
 
 ![FastAPI for Data Science](docs/images/fastapi-notes-1.png)
