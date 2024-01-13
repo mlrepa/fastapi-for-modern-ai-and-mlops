@@ -435,6 +435,10 @@ curl -X 'POST' \
 
 - [Документация FastAPI](https://fastapi.tiangolo.com/ru/#_5)
 - [4 Tips for Building a Production-Ready FastAPI Backend](https://www.youtube.com/watch?v=XlnmN4BfCxw)
+- [FastAPI Best Practices](https://betterprogramming.pub/fastapi-best-practices-1f0deeba4fce)
+- [12 Beginner Concepts About Type Hints To Improve Your Python Code](https://towardsdatascience.com/12-beginner-concepts-about-type-hints-to-improve-your-python-code-90f1ba0ac49#)
+- [Type Hinting in Python](https://dagster.io/blog/python-type-hinting)
+- [Pydantic](https://docs.pydantic.dev/latest/)
 
 
 ![FastAPI for Data Science](docs/images/fastapi-notes-1.png)
