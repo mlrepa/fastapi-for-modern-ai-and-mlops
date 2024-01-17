@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 import json
 from pydantic import BaseModel
 import random
+import uvicorn
 
 app = FastAPI()
 
