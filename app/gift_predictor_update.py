@@ -10,6 +10,7 @@ from pydantic import (
 from pydantic.functional_validators import AfterValidator
 import random
 from typing import Annotated
+import uvicorn
 
 app = FastAPI()
 
