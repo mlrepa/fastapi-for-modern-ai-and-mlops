@@ -1,71 +1,141 @@
-![FastAPI for Data Science](docs/images/fastapi-banner-1.png)
+# 🚀 FastAPI Basics for Modern AI and MLOps
 
-# Тьюториал: ****Основы FastAPI для Data Science****
+![FastAPI Basics for Modern AI and MLOps](assets/images/fastapi-banner-1.png){width="800"}
 
-The Birthday Gift Predictor is a FastAPI-based web application designed to suggest unique and personalized gift ideas based on the user's age and interests. Utilizing a JSON-based model, the app offers a fun and interactive way to discover the perfect birthday present.
+Welcome to the example project for the "FastAPI Basics for Modern AI and MLOps" tutorial! This repository contains the **Birthday Gift Predictor**, a simple FastAPI-based web application.
 
-## 👩‍💻 Installation
+It's designed to:
 
-To get started with the Birthday Gift Predictor, you need to have Python installed on your system. Follow these steps to install the necessary dependencies:
+- Suggest unique and personalized gift ideas based on user's age and interests.
+- Utilize a JSON-based "model" for its suggestions.
+- Serve as a foundational example of how FastAPI can be used to build and serve AI/ML model APIs.
 
-1. **Clone the Repository**
+This README provides quick setup and run instructions. For the full step-by-step guide, please refer to the main tutorial document.
 
-   First, clone the repository to your local machine:
+## ⚙️ Prerequisites
 
-   ```bash
-   git clone <repository-url>
+Before you begin, ensure you have the following:
+
+- **Python 3.9+** installed.
+- **`uv` (Python package installer) installed.**
+  - If you don't have `uv`, you can typically install it via `pip install uv` or `pipx install uv`. Check the [official `uv` documentation](https://github.com/astral-sh/uv) for other methods.
+- **Git** for cloning the repository.
+- Basic familiarity with the command line/terminal.
+
+## 👩‍💻 Quick Start: Installation & Setup
+
+Follow these steps to get the Birthday Gift Predictor running locally.
+
+### 1️⃣ Clone the Repository
+
+Get the example code onto your local machine:
+
+```bash
+git clone https://github.com/mlrepa/fastapi-for-modern-ai-and-mlops.git 
+cd fastapi-for-modern-ai-and-mlops
+```
+
+### 2️⃣ Create and Activate Virtual Environment
+
+It's highly recommended to use a virtual environment to manage project dependencies.
+
+Install `uv`:
+
+```bash
+# Install uv if you haven't already
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# Or consult official uv documentation for other installation methods
    ```
 
-2. **Create a Virtual Environment (Optional but Recommended)**
+Create a virtual environment using `uv`:
 
-   Navigate to the project directory and create a virtual environment:
+```bash
+uv venv .venv --python 3.12
 
-   ```bash
-    python3 -m venv .venv
-   ```
+# Activate the virtual environment
+# On macOS and Linux:
+source .venv/bin/activate
+# On Windows:
+# .\.venv\Scripts\activate
+```
 
-   Activate the virtual environment:
+> 👉 **Note:** The `uv venv .venv` command creates a virtual environment in a folder named `.venv` within your project directory.
 
-   - On Windows:
+### 3️⃣ Install Dependencies
 
-     ```bash
-     .\.venv\Scripts\activate
-     ```
+With the virtual environment activated, install the required Python packages:
 
-   - On macOS and Linux:
+```bash
+uv pip install -e .
 
-     ```bash
-     source .venv/bin/activate
-     ```
+# Or from requirements.txt:
+# uv pip install -r requirements.txt
 
-3. **Install Dependencies**
+# Install development dependencies (linters, formatters)
+# Assuming these are defined in your pyproject.toml under [project.optional-dependencies]
+uv pip install -e ".[dev]" 
+# Or add them individually:
+# uv pip install black mypy ruff
+```
 
-   With the virtual environment activated, install the required packages:
+## ▶️ Run the Application
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+Once dependencies are installed, you're ready to launch the FastAPI application.
 
-## Run Application
+### 1️⃣ Start the FastAPI Server
 
-After installing the dependencies, you're ready to run the application:
+Run the Uvicorn server from your project's root directory:
 
-1. **Start the FastAPI Server**
+```bash
+uvicorn app.gift_predictor:app --reload
+```
 
-   Run the following command in the terminal:
+- `app.gift_predictor:app`: Points to the `app` instance of `FastAPI` within the `gift_predictor.py` file located in the `app` directory.
+- `--reload`: Enables auto-reload, so the server automatically restarts if you make code changes (very useful during development).
 
-   ```bash
-   uvicorn app.gift_predictor:app --reload
-   ```
+You should see output in your terminal indicating that Uvicorn is running and the application is available (usually on `http://0.0.0.0:8000`).
 
-   The `--reload` flag enables auto-reload so the server will restart after changes in the code.
+### 2️⃣ Access the Application
 
-2. **Access the Application**
+Open your web browser and navigate to:
 
-   Open your web browser and navigate to:
+```
+http://localhost:8000/
+```
 
-   ```
-   http://localhost:8000/
-   ```
+You should see the Birthday Gift Predictor's homepage.
 
-   You will see the Birthday Gift Predictor's homepage where you can interact with the application.
+### 📚 Explore the API Docs
+
+FastAPI automatically generates interactive API documentation. This is a great way to understand and test the available endpoints:
+
+- **Swagger UI:** [http://localhost:8000/docs](http://localhost:8000/docs)
+- **ReDoc:** [http://localhost:8000/redoc](http://localhost:8000/redoc)
+
+You can use these interfaces to send requests to the `/predict/` endpoint and see the application in action!
+
+## 🐳 Docker (Optional)
+
+This project also includes a `Dockerfile` to containerize the application. Refer to the main tutorial (Section 5) for detailed instructions on building and running the Docker container.
+
+**Quick Docker Commands (from project root):**
+
+```bash
+# 1. Build the Docker image
+docker build -t fastapi-gift-predictor .
+
+# 2. Run the Docker container
+# (Remove old one if it exists)
+# docker rm -f mygiftapp-container
+docker run --name mygiftapp-container -p 8000:8000 -d fastapi-gift-predictor
+```
+
+The application will then be accessible via Docker at `http://localhost:8000/`.
+
+## 📖 Next Steps
+
+- Dive into the `app/gift_predictor.py` code to see how the FastAPI endpoints, Pydantic models, and "prediction" logic are implemented.
+- Follow the main **"FastAPI Basics for Modern AI and MLOps"** tutorial for a detailed walkthrough and explanations of each concept.
+- Experiment by modifying the `models/model.json` or adding new features!
+
+Happy coding! 🎉
