@@ -5,7 +5,7 @@ from pathlib import Path
 class GiftPredictor:
     def __init__(self, model_path: str = "models/model.json"):
         self.model_path = model_path
-        self.model_data: Optional[Dict[str, Any]] = None
+        self.model_data: dict[str, Any] | None = None
         self.valid_interests: list[str] = []
         self._load_model()
 
@@ -14,7 +14,8 @@ class GiftPredictor:
         try:
             with open(self.model_path, 'r') as f:
                 self.model_data = json.load(f)
-            self.valid_interests = list(self.model_data.get("interests", {}).keys())
+            if self.model_data is not None:  # Type guard for mypy
+                self.valid_interests = list(self.model_data.get("interests", {}).keys())
             print(f"Successfully loaded model data from {self.model_path}")
         except FileNotFoundError:
             print(f"ERROR: Model file not found at {self.model_path}")
@@ -44,9 +45,13 @@ class GiftPredictor:
             
         Raises:
             ValueError: If interest is not valid
+            RuntimeError: If model is not loaded
         """
         if not self.is_loaded():
             raise RuntimeError("Model not loaded")
+
+        if self.model_data is None:  # Type guard for mypy
+            raise RuntimeError("Model data is None")
 
         interest_lower = interest.lower()
         if interest_lower not in self.valid_interests:
