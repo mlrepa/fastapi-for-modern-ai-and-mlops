@@ -1,6 +1,6 @@
 # 🚀 FastAPI Basics for Modern AI and MLOps
 
-![FastAPI Basics for Modern AI and MLOps](assets/images/fastapi-banner-1.png){width="800"}
+<img src="assets/images/fastapi-banner-1.png" width="800" alt="FastAPI Basics for Modern AI and MLOps">
 
 Welcome to the example project for the "FastAPI Basics for Modern AI and MLOps" tutorial! This repository contains the **Birthday Gift Predictor**, a simple FastAPI-based web application.
 

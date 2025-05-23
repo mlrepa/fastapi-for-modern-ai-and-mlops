@@ -1,6 +1,8 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator, ValidationInfo
+from typing import Annotated
+from pydantic.functional_validators import AfterValidator
 from app.model import GiftPredictor
 
 app = FastAPI(title="Birthday Gift Predictor API", version="1.0.0")
@@ -8,9 +10,45 @@ app = FastAPI(title="Birthday Gift Predictor API", version="1.0.0")
 # Initialize the predictor
 predictor = GiftPredictor()
 
+# Get valid interests from the model
+VALID_INTERESTS = predictor.get_valid_interests()
+
+def validate_interest(value: str) -> str:
+    """Validate and normalize interest value."""
+    normalized_value = value.strip().lower()
+    if normalized_value not in VALID_INTERESTS:
+        raise ValueError(f"Interest must be one of: {', '.join(VALID_INTERESTS)}")
+    return normalized_value
+
+# Reusable Annotated type for interest validation
+InterestType = Annotated[
+    str,
+    Field(description=f"Interest should be one of: {', '.join(VALID_INTERESTS)}"),
+    AfterValidator(validate_interest)
+]
+
 class PredictionInput(BaseModel):
+    """
+    Represents the input data for predicting a birthday gift.
+    """
     age: int = Field(..., gt=0, le=120, description="User's age (1-120)")
-    interest: str = Field(..., min_length=2, max_length=30, description="User's primary interest")
+    interest: InterestType
+
+    @field_validator('interest')
+    @classmethod
+    def check_alphanumeric(cls, v: str, info: ValidationInfo) -> str:
+        """Ensure interest contains only alphanumeric characters."""
+        if not v.replace(' ', '').isalnum():
+            raise ValueError(f'Field: {info.field_name} must be alphanumeric')
+        return v
+
+    @field_validator('age')
+    @classmethod
+    def validate_age_range(cls, v: int) -> int:
+        """Additional age validation logic."""
+        if v < 1 or v > 120:
+            raise ValueError("Age must be between 1 and 120")
+        return v
 
 class PredictionOutput(BaseModel):
     predicted_gift: str
@@ -86,4 +124,4 @@ async def predict_birthday_gift(payload: PredictionInput):
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e))
     except RuntimeError as e:
-        raise HTTPException(status_code=503, detail=str(e))
+        raise HTTPException(status_code=503, detail=str(e)) 

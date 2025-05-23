@@ -1,12 +1,12 @@
-![FastAPI Basics for Modern AI and MLOp](assets/images/fastapi-banner-1.png){width="800"}
+<img src="assets/images/fastapi-banner-1.png" width="800" alt="FastAPI Basics for Modern AI and MLOps">
 
 # 🚀 Tutorial: FastAPI Basics for Modern AI and MLOps
 
 ## 👀 Description
 
-🎓 **What is this?** The "FastAPI Basics for Modern AI and MLOps" tutorial is your comprehensive journey into building web services with FastAPI, specially designed for Data Scientists and ML Engineers. This tutorial will show you how easily and quickly you can use FastAPI to build robust, high-performance APIs to serve your ML models and integrate them into larger MLOps workflows.
+🎓 **What is this?** The "FastAPI Basics for Modern AI and MLOps" tutorial is your comprehensive journey into building web services with FastAPI, specially designed for AI Developers and ML Engineers. This tutorial will show you how easily and quickly you can use FastAPI to build robust, high-performance APIs to serve your ML models and integrate them into larger MLOps workflows.
 
-👩‍💻 **Who is this for?** If you're a Data Scientist, ML Engineer, or anyone looking to deploy machine learning models as scalable web services, this tutorial is for you. It covers the essentials to get you started quickly and effectively.
+👩‍💻 **Who is this for?** If you're a AI Developer, ML Engineer, or anyone looking to deploy machine learning models as scalable web services, this tutorial is for you. It covers the essentials to get you started quickly and effectively.
 
 🎯 **What will you learn?**
 
@@ -25,38 +25,37 @@
 
 ## 📖 Table of Contents
 
-- [🚀 Tutorial: FastAPI Basics for Modern AI and MLOps](#-tutorial-fastapi-basics-for-modern-ai-and-mlops)
-  - [👀 Description](#-description)
-  - [📖 Table of Contents](#-table-of-contents)
-  - [⚙️ 1 - Prerequisites & Installation](#️-1---prerequisites--installation)
-  - [🤔 2 - Why FastAPI for AI & MLOps?](#-2---why-fastapi-for-ai--mlops)
-  - [⭐ 3 - Core FastAPI: GET & POST Requests (10 minutes)](#-3---core-fastapi-get--post-requests-10-minutes)
-    - [Step 1: Create a Simple API with a GET Request](#step-1-create-a-simple-api-with-a-get-request)
-    - [Step 2: Run the FastAPI Service](#step-2-run-the-fastapi-service)
-    - [Step 3: Test the Service](#step-3-test-the-service)
-    - [Step 4: Create an API with a POST Request (Introducing Pydantic)](#step-4-create-an-api-with-a-post-request-introducing-pydantic)
-    - [Step 5: Test the POST Request](#step-5-test-the-post-request)
-    - [Step 6: Automatic API Documentation](#step-6-automatic-api-documentation)
-  - [🛠️ 4 - Integrating an ML Model with FastAPI (15 minutes)](#️-4---integrating-an-ml-model-with-fastapi-15-minutes)
-    - [Step 1: The "Model" - A Simplified Example](#step-1-the-model---a-simplified-example)
-    - [Step 2: Loading the Model at Application Startup](#step-2-loading-the-model-at-application-startup)
-    - [Step 3: Defining Input/Output Data Structures with Pydantic](#step-3-defining-inputoutput-data-structures-with-pydantic)
-    - [Step 4: Creating an Endpoint for Model Predictions](#step-4-creating-an-endpoint-for-model-predictions)
-    - [Step 5: Running the Full Application](#step-5-running-the-full-application)
-    - [Step 6: Testing the Prediction Endpoint](#step-6-testing-the-prediction-endpoint)
-  - [🐳 5 - Running Your FastAPI Web Service in a Docker Container (15 minutes)](#-5---running-your-fastapi-web-service-in-a-docker-container-15-minutes)
-    - [Step 1: Verify Project Structure](#step-1-verify-project-structure)
-    - [Step 2: Prepare the Dockerfile (with `uv`)](#step-2-prepare-the-dockerfile-with-uv)
-    - [Step 3: Build the Docker Image](#step-3-build-the-docker-image)
-    - [Step 4: Run the Docker Container](#step-4-run-the-docker-container)
-  - [🧪 6 - Pydantic Power-Up: Advanced Validation (10 minutes)](#-6---pydantic-power-up-advanced-validation-10-minutes)
-    - [Python Type Annotations: A Quick Refresher](#python-type-annotations-a-quick-refresher)
-    - [Pydantic Basics Recap](#pydantic-basics-recap)
-    - [Advanced Validation with `Field`](#advanced-validation-with-field)
-    - [Custom Logic with Field Validators (`@field_validator`)](#custom-logic-with-field-validators-field_validator)
-    - [Reusable Validations with `typing.Annotated`](#reusable-validations-with-typingannotated)
-  - [🔗 7 - Additional Resources](#-7---additional-resources)
-  - [🎉 8 - Next Steps & Conclusion](#-8---next-steps--conclusion)
+1. [🚀 Tutorial: FastAPI Basics for Modern AI and MLOps](#-tutorial-fastapi-basics-for-modern-ai-and-mlops)
+   1. [👀 Description](#-description)
+   2. [📖 Table of Contents](#-table-of-contents)
+   3. [⚙️ 1 - Prerequisites \& Installation](#️-1---prerequisites--installation)
+2. [🤔 2 - Why FastAPI for AI \& MLOps?](#-2---why-fastapi-for-ai--mlops)
+   1. [⭐ 3 - Core FastAPI: GET \& POST Requests](#-3---core-fastapi-get--post-requests)
+      1. [Step 1: Create a Simple API with a GET Request](#step-1-create-a-simple-api-with-a-get-request)
+      2. [Step 2: Run the FastAPI Service](#step-2-run-the-fastapi-service)
+      3. [Step 3: Test the Service](#step-3-test-the-service)
+      4. [Step 4: Create an API with a POST Request (Introducing Pydantic)](#step-4-create-an-api-with-a-post-request-introducing-pydantic)
+      5. [Step 5: Test the POST Request](#step-5-test-the-post-request)
+      6. [Step 6: Automatic API Documentation](#step-6-automatic-api-documentation)
+   2. [🛠️ 4 - Integrating an ML Model with FastAPI](#️-4---integrating-an-ml-model-with-fastapi)
+      1. [Step 1: The Model Module - A Simplified Example](#step-1-the-model-module---a-simplified-example)
+      2. [Step 2: Defining Input/Output Data Structures with Pydantic](#step-2-defining-inputoutput-data-structures-with-pydantic)
+      3. [Step 3: Creating the API Endpoints](#step-3-creating-the-api-endpoints)
+      4. [Step 4: Running the Full Application](#step-4-running-the-full-application)
+      5. [Step 5: Testing the Prediction Endpoint](#step-5-testing-the-prediction-endpoint)
+   3. [🐳 5 - Running Your FastAPI Web Service in a Docker Container](#-5---running-your-fastapi-web-service-in-a-docker-container)
+      1. [Step 1: Prepare the Dockerfile](#step-1-prepare-the-dockerfile)
+      2. [Step 2: Build the Docker Image](#step-2-build-the-docker-image)
+      3. [Step 3: Run the Docker Container](#step-3-run-the-docker-container)
+   4. [🧪 6 - Pydantic Power-Up: Advanced Validation](#-6---pydantic-power-up-advanced-validation)
+      1. [Python Type Annotations: A Quick Refresher](#python-type-annotations-a-quick-refresher)
+      2. [Pydantic Basics Recap](#pydantic-basics-recap)
+      3. [Advanced Validation with `Field` and `Annotated`](#advanced-validation-with-field-and-annotated)
+      4. [Custom Logic with Field Validators (`@field_validator`)](#custom-logic-with-field-validators-field_validator)
+      5. [Reusable Validations with `typing.Annotated`](#reusable-validations-with-typingannotated)
+      6. [Testing the Enhanced Validation](#testing-the-enhanced-validation)
+   5. [🔗 7 - Additional Resources](#-7---additional-resources)
+   6. [🎉 8 - Next Steps \& Conclusion](#-8---next-steps--conclusion)
 
 ---
 
@@ -64,13 +63,14 @@
 
 Before we dive in, let's ensure your environment is ready.
 
-**0. Prerequisites:**
-- **Python 3.9+ installed.** (FastAPI supports 3.8+, but newer versions are recommended).
-- **`uv` (Python package installer) installed.** `uv` is a fast, modern package manager.
+Prerequisites:
+
+- Python 3.9+ installed. (FastAPI supports 3.8+, but newer versions are recommended).
+- `uv` (Python package installer) installed. `uv` is a fast, modern package manager.
   - If you don't have `uv`, install it: `pip install uv` (or `pipx install uv`). Refer to the [official `uv` documentation](https://github.com/astral-sh/uv) for more installation options.
-- **Basic understanding of Python** and the command line/terminal.
-- **Basic understanding of web concepts** (HTTP methods like GET/POST, what an API is).
-- **Docker installed** (for the Docker containerization section).
+- Basic understanding of Python and the command line/terminal.
+- Basic understanding of web concepts (HTTP methods like GET/POST, what an API is).
+- Docker installed (for the Docker containerization section).
 
 Please follow the [Quick Start: Installation & Setup](README.md#-quick-start-installation--setup) section in the README to set up your development environment. This will guide you through:
 
@@ -80,7 +80,11 @@ Please follow the [Quick Start: Installation & Setup](README.md#-quick-start-ins
 
 ---
 
-## 🤔 2 - Why FastAPI for AI & MLOps?
+Rewrite this section
+
+- make shorter
+
+# 🤔 2 - Why FastAPI for AI & MLOps?
 
 FastAPI has rapidly become a favorite for building APIs, especially for serving machine learning models in MLOps pipelines. Here's why:
 
@@ -98,16 +102,16 @@ In short, FastAPI helps you build production-ready, maintainable, and performant
 
 ---
 
-## ⭐ 3 - Core FastAPI: GET & POST Requests (10 minutes)
+## ⭐ 3 - Core FastAPI: GET & POST Requests
 
 Let's start with the fundamentals of creating API endpoints.
 
 ### Step 1: Create a Simple API with a GET Request
 
-Create a file named `main_step3.py` (we'll create new files for steps to keep them distinct):
+Create a file named `main.py` (we'll create new files for steps to keep them distinct):
 
 ```python
-# main_step3.py
+# main.py
 from fastapi import FastAPI
 
 app = FastAPI(title="My First FastAPI App")
@@ -119,19 +123,20 @@ async def read_root(): # Path operation function (can be async or sync)
 
 ### Step 2: Run the FastAPI Service
 
-Open your terminal, navigate to the directory with `main_step3.py`, and run:
+Open your terminal, navigate to the directory with `main.py`, and run:
 
 ```bash
-uvicorn main_step3:app --reload
+uvicorn main:app --reload
 ```
 
-* `main_step3`: The Python file.
-- `app`: The `FastAPI` instance inside `main_step3.py`.
+- `main`: The Python file.
+
+- `app`: The `FastAPI` instance inside `main.py`.
 - `--reload`: For auto-restarting the server on code changes during development.
 
 ### Step 3: Test the Service
 
-Open your browser and go to `http://localhost:8000/`. You should see:
+Open your browser and go to [http://127.0.0.1:8000/](http://127.0.0.1:8000/). You should see:
 
 ```json
 {"message":"Hello from FastAPI!"}
@@ -141,10 +146,10 @@ Open your browser and go to `http://localhost:8000/`. You should see:
 
 POST requests are typically used to send data to the server to create or update resources. FastAPI uses **Pydantic** models to define the structure and validate this incoming data.
 
-Create `main_step4.py`:
+Update `main.py`:
 
 ```python
-# main_step4.py
+# main.py
 from fastapi import FastAPI
 from pydantic import BaseModel # Import BaseModel from Pydantic
 
@@ -168,7 +173,8 @@ async def create_item(item: Item): # FastAPI validates incoming data against the
     return {"item_name": item.name, "item_price": item.price, "description": item.description}
 ```
 
-* **Pydantic `BaseModel`:** We define `Item` inheriting from `pydantic.BaseModel`. Its attributes with type hints define the expected JSON structure.
+- **Pydantic `BaseModel`:** We define `Item` inheriting from `pydantic.BaseModel`. Its attributes with type hints define the expected JSON structure.
+
 - **Type Hinting:** `item: Item` in `create_item` tells FastAPI to expect a request body matching the `Item` model. FastAPI handles parsing the JSON, validating it, and converting it to an `Item` object. If validation fails, FastAPI automatically returns a 422 error.
 
 ### Step 5: Test the POST Request
@@ -176,19 +182,21 @@ async def create_item(item: Item): # FastAPI validates incoming data against the
 Stop the previous server (Ctrl+C) and run the new one:
 
 ```bash
-uvicorn main_step4:app --reload
+uvicorn main:app --reload
 ```
 
 Use `curl` (or Postman/Insomnia) to send a POST request:
 
 ```bash
-curl -X POST "http://localhost:8000/items/" \
-     -H "Content-Type: application/json" \
-     -d '{
-           "name": "Super Gadget",
-           "price": 49.99,
-           "description": "An amazing new gadget for all your needs"
-         }'
+curl -X 'POST' 'http://127.0.0.1:8000/items/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "string",
+    "description": "string",
+    "price": 0,
+    "is_offer": true
+    }'
 ```
 
 **Expected Response:**
@@ -197,23 +205,24 @@ curl -X POST "http://localhost:8000/items/" \
 {"item_name":"Super Gadget","item_price":49.99,"description":"An amazing new gadget for all your needs"}
 ```
 
-Try sending invalid data (e.g., `price` as a string) to see FastAPI's automatic 422 validation error!
+Try sending invalid data (e.g., `price` as a string) to see FastAPI's automatic `422 validation error`!
 
 ### Step 6: Automatic API Documentation
 
-FastAPI automatically generates interactive API documentation. With `main_step4.py` running:
-- **Swagger UI:** Open `http://localhost:8000/docs`
-- **ReDoc:** Open `http://localhost:8000/redoc`
+FastAPI automatically generates interactive API documentation. With `main.py` running:
+
+- **Swagger UI:** Open [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+- **ReDoc:** Open [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
 You can see your `/` (GET) and `/items/` (POST) endpoints, including the expected request body schema for `/items/` derived from the `Item` Pydantic model. You can even "Try it out" directly from Swagger UI!
 
 ---
 
-## 🛠️ 4 - Integrating an ML Model with FastAPI (15 minutes)
+## 🛠️ 4 - Integrating an ML Model with FastAPI
 
-Let's integrate a "model" into FastAPI. For this tutorial, we'll use the simplified `gift_predictor.py` example.
+Let's integrate a fake "model" into FastAPI. For this tutorial, we'll use the simplified `gift_predictor.py` example.
 
-### Step 1: The "Model" - A Simplified Example
+### Step 1: The Model Module - A Simplified Example
 
 Our "ML model" for this tutorial is a JSON file (`models/model.json`) that acts as a lookup table for gift suggestions.
 
@@ -228,43 +237,37 @@ Our "ML model" for this tutorial is a JSON file (`models/model.json`) that acts 
 >     - Or use ONNX for a framework-agnostic format.
 > The principles of loading this saved model at FastAPI startup and using it in your prediction endpoint remain the same.
 
-### Step 2: Loading the Model at Application Startup
+To work with this model, we'll create a `GiftPredictor` class in `app/model.py`. This module encapsulates all model-related logic:
 
-It's crucial to load your ML model **once** when the FastAPI application starts, not on every request, to avoid performance bottlenecks. We do this by loading it into a global variable in `app/gift_predictor.py`.
+- Loading and managing the model data from `model.json`
+- Validating inputs
+- Making predictions
+- Error handling
+
+The `GiftPredictor` class provides a clean interface for working with our model data, making it easy to:
+1. Load the model at startup
+2. Check if the model is loaded
+3. Get a list of valid interests
+4. Make predictions based on age and interest
+
+### Step 2: Defining Input/Output Data Structures with Pydantic
+
+Now, let's create our FastAPI application in `app/gift_predictor.py`:
 
 ```python
-# app/gift_predictor.py (excerpt)
-import json
-from fastapi import FastAPI, HTTPException # Import HTTPException
+# app/gift_predictor.py
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
+from pydantic import BaseModel, Field
+from app.models.model import GiftPredictor
 
 app = FastAPI(title="Birthday Gift Predictor API", version="1.0.0")
 
-MODEL_PATH = "models/model.json"
-model_data = None # Initialize as None
-
-try:
-    with open(MODEL_PATH, 'r') as f:
-        model_data = json.load(f)
-    print(f"Successfully loaded model data from {MODEL_PATH}")
-except FileNotFoundError:
-    print(f"ERROR: Model file not found at {MODEL_PATH}. API will not function correctly.")
-    # In a real app, you might want the app to not start or have a health check fail.
-except json.JSONDecodeError:
-    print(f"ERROR: Could not decode JSON from {MODEL_PATH}. File might be corrupted.")
-```
-
-This code attempts to load the JSON data. If it fails, it prints an error. A real application would have more robust error handling or health checks.
-
-### Step 3: Defining Input/Output Data Structures with Pydantic
-
-Clear data contracts are essential. We define Pydantic models for the input to our prediction endpoint and for its output.
-
-```python
-# app/gift_predictor.py (continued)
-from pydantic import BaseModel, Field # Import Field for more detailed validation
+# Initialize the predictor
+predictor = GiftPredictor()
 
 class PredictionInput(BaseModel):
-    age: int = Field(..., gt=0, le=120, description="User's age (1-120)") # ... means required
+    age: int = Field(..., gt=0, le=120, description="User's age (1-120)")
     interest: str = Field(..., min_length=2, max_length=30, description="User's primary interest")
 
 class PredictionOutput(BaseModel):
@@ -273,74 +276,71 @@ class PredictionOutput(BaseModel):
     confidence_score: float | None = Field(None, ge=0, le=1, description="Model's confidence (0.0-1.0)")
 ```
 
-* `Field(..., gt=0, le=120)`: `...` makes `age` required. `gt` (greater than) and `le` (less than or equal to) provide validation.
-- `response_model=PredictionOutput` will be used in our endpoint to define and validate the structure of the response.
+### Step 3: Creating the API Endpoints
 
-### Step 4: Creating an Endpoint for Model Predictions
-
-Now, the core prediction logic within a FastAPI path operation.
+Add the endpoints to `app/gift_predictor.py`:
 
 ```python
-# app/gift_predictor.py (continued)
-import random # For dummy confidence
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+async def home():
+    # ...
+    # Return a simple HTML page with the available interests
 
 @app.post("/predict/", response_model=PredictionOutput, tags=["Predictions"])
-async def predict_birthday_gift(payload: PredictionInput): # Use 'payload' for clarity
-    if model_data is None:
+async def predict_birthday_gift(payload: PredictionInput):
+    if not predictor.is_loaded():
         raise HTTPException(status_code=503, detail="Model not loaded. Service unavailable.")
 
-    age_str = str(payload.age)
-    interest_lower = payload.interest.lower()
-
-    # Simplified "prediction" logic using the loaded JSON
-    primary_gift = model_data.get("gifts_by_age", {}).get(age_str, "A thoughtful surprise")
-    interest_category = model_data.get("interests", {}).get(interest_lower, "General Interest")
-    
-    final_gift_suggestion = f"{primary_gift} related to {interest_category}."
-    if interest_category == "General Interest" and primary_gift == "A thoughtful surprise":
-        final_gift_suggestion = "A very special and unique surprise, just for you!"
+    try:
+        predicted_gift, suggested_category, confidence = predictor.predict(
+            age=payload.age,
+            interest=payload.interest
+        )
         
-    # Dummy confidence score
-    confidence = round(random.uniform(0.65, 0.98), 2)
-
-    return PredictionOutput(
-        predicted_gift=final_gift_suggestion,
-        suggested_category=interest_category,
-        confidence_score=confidence
-    )
-
-# Add a simple HTML home page (optional, but nice for users)
-from fastapi.responses import HTMLResponse
-@app.get("/", response_class=HTMLResponse, include_in_schema=False) # Hides from API docs
-async def home():
-    return """
-    <html>
-        <head><title>Gift Predictor API</title></head>
-        <body>
-            <h1>🎁 Birthday Gift Predictor API</h1>
-            <p>Welcome! Use the <a href="/docs">/docs</a> endpoint to try the API.</p>
-        </body>
-    </html>
-    """
+        return PredictionOutput(
+            predicted_gift=predicted_gift,
+            suggested_category=suggested_category,
+            confidence_score=confidence
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except RuntimeError as e:
+        raise HTTPException(status_code=503, detail=str(e))
 ```
 
-* **Error Handling:** If `model_data` isn't loaded, we raise an `HTTPException` with a 503 status.
-- **`response_model=PredictionOutput`:** FastAPI will validate that the dictionary returned by this function matches the `PredictionOutput` schema. If not, it raises an internal server error. It also uses this for the API documentation.
+This modular structure provides several benefits:
+1. **Separation of Concerns**: Model logic is separate from API handling
+2. **Better Error Handling**: Clear distinction between model and API errors
+3. **Improved Maintainability**: Changes to model logic don't affect API code
+4. **Easier Testing**: Can test model and API independently
+5. **Better Code Organization**: Clear responsibilities for each component
 
-### Step 5: Running the Full Application
+### Step 4: Running the Full Application
 
-Ensure your `app/gift_predictor.py` file contains all these parts. Then run:
+Ensure your project structure looks like this:
+
+```plaintext
+fastapi-for-modern-ai-and-mlops/
+├── app/
+│   ├── model.py
+│   └── gift_predictor.py
+├── models/
+│   └── model.json
+└── requirements.txt
+```
+
+Then run:
 
 ```bash
 uvicorn app.gift_predictor:app --reload
 ```
 
-### Step 6: Testing the Prediction Endpoint
+### Step 5: Testing the Prediction Endpoint
 
 **Using `curl`:**
 
 ```bash
-curl -X POST "http://localhost:8000/predict/" \
+curl -X POST "http://127.0.0.1:8000/predict/" \
      -H "Content-Type: application/json" \
      -d '{"age": 28, "interest": "Programming"}'
 ```
@@ -351,82 +351,40 @@ curl -X POST "http://localhost:8000/predict/" \
 {
   "predicted_gift": "A new tech gadget related to Coding.",
   "suggested_category": "coding",
-  "confidence_score": 0.88
+  "confidence_score": 0.85
 }
 ```
 
-**Or test via Swagger UI at `http://localhost:8000/docs`:**
-Expand the `/predict/` endpoint, click "Try it out," enter valid JSON, and execute. You'll see the structured request and response. Try invalid input (e.g., age < 1) to see Pydantic's validation in action (a 422 error).
+Or test via Swagger UI at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs):
+Expand the `/predict/` endpoint, click "Try it out," enter valid JSON, and execute. You'll see the structured request and response. Try invalid input (e.g., age < 1 or invalid interest) to see the validation in action.
 
 ---
 
-## 🐳 5 - Running Your FastAPI Web Service in a Docker Container (15 minutes)
+## 🐳 5 - Running Your FastAPI Web Service in a Docker Container
 
 Containerizing your application with Docker ensures consistency across different environments and simplifies deployment.
 
-### Step 1: Verify Project Structure
+### Step 1: Prepare the Dockerfile
 
 A typical structure (ensure `Dockerfile` is at the root):
 
 ```plaintext
-fastapi-1-for-ml/
+fastapi-for-modern-ai-and-mlops/
 ├── app/
-│   └── gift_predictor.py
 ├── models/
-│   └── model.json
-├── Dockerfile
-└── requirements.txt
+└── Dockerfile
+...
 ```
 
-### Step 2: Prepare the Dockerfile (with `uv`)
+Create/update your [Dockerfile](Dockerfile) at the project root.
 
-Create/update your `Dockerfile` at the project root:
-
-```dockerfile
-# Dockerfile
-# Stage 1: Build environment with uv and install dependencies
-FROM python:3.11-slim AS builder
-
-# Install uv
-RUN pip install --no-cache-dir uv
-
-WORKDIR /opt/venv
-COPY requirements.txt .
-# Create a virtual environment and install dependencies into it
-RUN uv venv .venv && \
-    .venv/bin/uv pip install --no-cache-dir -r requirements.txt
-
-# Stage 2: Production image
-FROM python:3.11-slim
-
-WORKDIR /app
-
-# Copy the virtual environment from the builder stage
-COPY --from=builder /opt/venv/.venv /opt/venv/.venv
-
-# Copy application code
-COPY ./app /app/app
-COPY ./models /app/models
-
-# Expose port 8000
-EXPOSE 8000
-
-# Activate venv and run the application
-# The PATH ensures 'uvicorn' from the venv is found
-ENV PATH="/opt/venv/.venv/bin:$PATH"
-CMD ["uvicorn", "app.gift_predictor:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
-* **Multi-stage build:** The first stage (`builder`) installs `uv` and creates a virtual environment with dependencies. The second stage copies this venv and your app code, resulting in a cleaner final image.
-- **`uv` usage:** We now use `uv` inside the Dockerfile to install dependencies.
-
-### Step 3: Build the Docker Image
+### Step 2: Build the Docker Image
 
 ```bash
 docker build -t fastapi-gift-predictor .
 ```
 
-### Step 4: Run the Docker Container
+### Step 3: Run the Docker Container
 
 ```bash
 # Remove old container if it exists
@@ -436,13 +394,13 @@ docker rm -f mygiftapp-container
 docker run --name mygiftapp-container -p 8000:8000 -d fastapi-gift-predictor
 ```
 
-Your application is now running inside Docker, accessible at `http://localhost:8000/`. Test it as before!
+Your application is now running inside Docker, accessible at [http://127.0.0.1:8000/](http://127.0.0.1:8000/). Test it as before!
 
 ---
 
-## 🧪 6 - Pydantic Power-Up: Advanced Validation (10 minutes)
+## 🧪 6 - Pydantic Power-Up: Advanced Validation
 
-Pydantic is incredibly powerful for defining precise data validation rules.
+Pydantic is incredibly powerful for defining precise data validation rules. Let's enhance our gift predictor API with advanced validation while keeping our existing `GiftPredictor` class.
 
 ### Python Type Annotations: A Quick Refresher
 
@@ -452,87 +410,156 @@ As discussed in "Why FastAPI?", type hints are fundamental. They declare the *ex
 
 You've used `BaseModel` to define data structures and `Field` to add basic constraints (e.g., `gt`, `le`, `min_length`).
 
-### Advanced Validation with `Field`
+### Advanced Validation with `Field` and `Annotated`
 
-`Field` offers many validation parameters: `max_length`, `pattern` (for regex), `multiple_of`, etc.
-Example for an MLOps input model:
-
-```python
-from pydantic import BaseModel, Field
-from typing import List
-
-class MLFeaturesInput(BaseModel):
-    request_id: str = Field(..., pattern=r"^[a-zA-Z0-9_-]{10,30}$") # Regex for ID format
-    numerical_features: List[float] = Field(..., min_items=5, max_items=5) # Fixed size list
-    categorical_feature: str = Field(..., example="type_A")
-
-# Example usage:
-# valid_input = MLFeaturesInput(
-#     request_id="req_123_abc_XYZ",
-#     numerical_features=[0.1, 0.2, 0.3, 0.4, 0.5],
-#     categorical_feature="type_B"
-# )
-```
-
-### Custom Logic with Field Validators (`@field_validator`)
-
-For complex rules not covered by `Field` arguments:
+Let's enhance our `PredictionInput` model with advanced validation while using our existing `GiftPredictor` class:
 
 ```python
-# In your Pydantic model
-from pydantic import field_validator
-from pydantic_core.core_schema import ValidationInfo
+# app/gift_predictor_updated.py
+from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
+from pydantic import BaseModel, Field, field_validator, ValidationInfo
+from typing import Annotated
+from pydantic.functional_validators import AfterValidator
+from app.model import GiftPredictor
 
-class UserRegistration(BaseModel):
-    username: str = Field(min_length=3)
-    password: str = Field(min_length=8)
-    confirm_password: str
+# Initialize the predictor
+predictor = GiftPredictor()
 
-    @field_validator('confirm_password')
+# Get valid interests from the model
+VALID_INTERESTS = predictor.get_valid_interests()
+
+def validate_interest(value: str) -> str:
+    """Validate and normalize interest value."""
+    normalized_value = value.strip().lower()
+    if normalized_value not in VALID_INTERESTS:
+        raise ValueError(f"Interest must be one of: {', '.join(VALID_INTERESTS)}")
+    return normalized_value
+
+# Reusable Annotated type for interest validation
+InterestType = Annotated[
+    str,
+    Field(description=f"Interest should be one of: {', '.join(VALID_INTERESTS)}"),
+    AfterValidator(validate_interest)
+]
+
+class PredictionInput(BaseModel):
+    """
+    Represents the input data for predicting a birthday gift.
+    """
+    age: int = Field(..., gt=0, le=120, description="User's age (1-120)")
+    interest: InterestType
+
+    @field_validator('interest')
     @classmethod
-    def passwords_match(cls, v: str, info: ValidationInfo) -> str:
-        # info.data contains all fields validated so far
-        if 'password' in info.data and v != info.data['password']:
-            raise ValueError('Passwords do not match')
+    def check_alphanumeric(cls, v: str, info: ValidationInfo) -> str:
+        """Ensure interest contains only alphanumeric characters."""
+        if not v.replace(' ', '').isalnum():
+            raise ValueError(f'Field: {info.field_name} must be alphanumeric')
+        return v
+
+    @field_validator('age')
+    @classmethod
+    def validate_age_range(cls, v: int) -> int:
+        """Additional age validation logic."""
+        if v < 1 or v > 120:
+            raise ValueError("Age must be between 1 and 120")
         return v
 ```
 
-### Reusable Validations with `typing.Annotated`
+This enhanced validation:
+1. Uses `Annotated` to create a reusable validated interest type
+2. Automatically normalizes and validates interests against the model's valid interests
+3. Adds multiple validators for both age and interest fields
+4. Maintains compatibility with our existing `GiftPredictor` class
 
-For complex or reusable validation logic, combine `typing.Annotated` with Pydantic's functional validators. Let's refine the `InterestStr` example for `PredictionInput`:
+### Custom Logic with Field Validators (`@field_validator`)
+
+The `@field_validator` decorator allows us to add custom validation logic. In our example, we have two validators:
+
+1. **Age Validation**:
 
 ```python
-# In app/gift_predictor.py or a shared models.py
-from typing import Annotated
-from pydantic.functional_validators import AfterValidator
-
-VALID_INTERESTS_LIST = [ # Define as a constant
-    "painting", "reading", "gardening", "gaming", "yoga",
-    "fashion", "data", "ml", "programming", "it", "travel", "coding" # Added more
-]
-
-def check_and_normalize_interest(value: str) -> str:
-    normalized_value = value.strip().lower()
-    if normalized_value not in VALID_INTERESTS_LIST:
-        raise ValueError(
-            f"Invalid interest: '{value}'. Must be one of: {', '.join(VALID_INTERESTS_LIST)}"
-        )
-    return normalized_value
-
-# Reusable Annotated type
-ValidatedInterestStr = Annotated[
-    str,
-    Field(description=f"User's interest. Must be one of: {', '.join(VALID_INTERESTS_LIST)}"),
-    AfterValidator(check_and_normalize_interest)
-]
-
-# Update PredictionInput to use this
-class PredictionInput(BaseModel): # (from Step 3 in Section 4)
-    age: int = Field(..., gt=0, le=120, description="User's age (1-120)")
-    interest: ValidatedInterestStr # Use the annotated type
+@field_validator('age')
+@classmethod
+def validate_age_range(cls, v: int) -> int:
+    """Additional age validation logic."""
+    if v < 1 or v > 120:
+        raise ValueError("Age must be between 1 and 120")
+    return v
 ```
 
-Now, `PredictionInput`'s `interest` field will automatically use `check_and_normalize_interest`. If you run `app.gift_predictor:app` and send an invalid interest like `"skydiving"` to `/predict/`, FastAPI will return a 422 error with the custom message from `ValueError`.
+2. **Interest Validation**:
+```python
+@field_validator('interest')
+@classmethod
+def check_alphanumeric(cls, v: str, info: ValidationInfo) -> str:
+    """Ensure interest contains only alphanumeric characters."""
+    if not v.replace(' ', '').isalnum():
+        raise ValueError(f'Field: {info.field_name} must be alphanumeric')
+    return v
+```
+
+These validators:
+- Run after the basic field validation
+- Can access other fields through the `info` parameter
+- Can modify the value before it's stored
+- Raise `ValueError` for invalid values
+- Can be chained together for multiple validation steps
+
+### Reusable Validations with `typing.Annotated`
+
+The `InterestType` shows how to create reusable validation:
+
+```python
+def validate_interest(value: str) -> str:
+    """Validate and normalize interest value."""
+    normalized_value = value.strip().lower()
+    if normalized_value not in VALID_INTERESTS:
+        raise ValueError(f"Interest must be one of: {', '.join(VALID_INTERESTS)}")
+    return normalized_value
+
+InterestType = Annotated[
+    str,
+    Field(description=f"Interest should be one of: {', '.join(VALID_INTERESTS)}"),
+    AfterValidator(validate_interest)
+]
+```
+
+Benefits of this approach:
+1. Validation logic is reusable across different models
+2. The validation function is pure and testable
+3. Error messages are clear and helpful
+4. The validation is automatically applied when the type is used
+5. Can be combined with field validators for additional checks
+
+### Testing the Enhanced Validation
+
+Try these test cases with the updated API:
+
+```bash
+# Valid request
+curl -X POST "http://127.0.0.1:8000/predict/" \
+     -H "Content-Type: application/json" \
+     -d '{"age": 28, "interest": "Programming"}'
+
+# Invalid age
+curl -X POST "http://127.0.0.1:8000/predict/" \
+     -H "Content-Type: application/json" \
+     -d '{"age": 150, "interest": "Programming"}'
+
+# Invalid interest (non-alphanumeric)
+curl -X POST "http://127.0.0.1:8000/predict/" \
+     -H "Content-Type: application/json" \
+     -d '{"age": 28, "interest": "Programming!"}'
+
+# Invalid interest (not in list)
+curl -X POST "http://127.0.0.1:8000/predict/" \
+     -H "Content-Type: application/json" \
+     -d '{"age": 28, "interest": "Skydiving"}'
+```
+
+Each invalid request will return a `422` error with a descriptive message about what went wrong.
 
 ---
 
@@ -571,7 +598,5 @@ Congratulations! You've successfully navigated the basics of FastAPI for AI and 
 FastAPI provides the tools to build powerful and efficient APIs. The journey into MLOps involves continuous learning and integration of various tools and practices, and FastAPI is an excellent component in that ecosystem.
 
 Happy building, and may your models always serve with excellence! 🚀
-
-![FastAPI End Notes](docs/images/fastapi-notes-1.png){width="800"}
 
 [⬆️ Back to Table of Contents](#-table-of-contents)
